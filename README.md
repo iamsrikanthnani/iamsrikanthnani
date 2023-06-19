@@ -39,5 +39,5 @@ console.log(`
 
 🔧 I also use tools such as ${me.tools.join(", ")} and am comfortable with operating systems like ${me.os.join(", ")}.
 
-💌 To learn more about me, you can shoot me an [email](mailto:srikanthnani1202@gmail.com)! 
+💌 To learn more about me, you can shoot me an email to srikanthnani1202@gmail.com 
 `);
