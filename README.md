@@ -48,7 +48,7 @@ const App = () => (
     <StatusBar barStyle="dark-content" />
     <Image source={{ uri: person.avatar }} style={styles.avatar} />
     <Text style={styles.header}>👋 Hi there, I'm {person.name}!</Text>
-    <Text style={styles.caption}>{person.role}!</Text>
+    <Text style={styles.caption}>👨‍💻{person.role}!</Text>
     {renderItem('Programming Languages🚀', person.skills.programmingLanguages)}
     {renderItem('Mobile Development📱', person.skills.mobile)}
     {renderItem('Web Frontend🌐', person.skills.webFrontEnd)}
