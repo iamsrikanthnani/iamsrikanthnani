@@ -1,7 +1,9 @@
 <figure>
-  <img src="screenShort.PNG" alt="Screenshot">
+  <img src="https://github.com/iamsrikanthnani/iamsrikanthnani/blob/master/screenShot-dark.PNG#gh-dark-mode-only" alt="Screenshot">
+  <img src="https://github.com/iamsrikanthnani/iamsrikanthnani/blob/master/screenShot-light.PNG#gh-light-mode-only" alt="Screenshot">
 </figure>
 <details>
+  https://github.com/iamsrikanthnani/iamsrikanthnani/blob/master/screenShot-dark.PNG
 <summary>Click to show code</summary>
 
 ```javascript
