@@ -1,43 +1,116 @@
-# 👋 Hi there, I'm Srikanth Nani! 
+<figure>
+  <img src="screenShort.PNG" alt="Screenshot">
+</figure>
+<details>
+<summary>Click to show code</summary>
 
 ```javascript
-let skills = {
-  programmingLanguages: ["Javascript", "TypeScript", "Java", "Python", "Go", "PHP"],
-  webFrontEnd: ["HTML", "CSS", "Bootstrap", "Jquery", "ReactJs", "NextJs"],
-  mobile: ["React Native", "Android Development", "XCode"],
-  databases: ["MySQL", "PostgreSQL", "MongoDB"],
-  additionalSkills: ["Firebase", "AWS Amplify", "Storybook", "Redux", "Detox", "React-Query", 
-                     "Jest", "datadoghq", "Reanimated", "Git", "Styled Components", "Codepush",
-                     "Auth0", "Sendbird"]
+import React from 'react';
+import { View, Text, ScrollView, StyleSheet, Image, StatusBar } from 'react-native';
+
+const person = {
+  name: 'Srikanth Nani',
+  avatar: 'https://avatars.githubusercontent.com/u/55689131?v=4',
+  role: 'React-native and Front-end Developer',
+  location: 'Hyderabad, Telangana',
+  languagesSpoken: ['Telugu', 'English', 'Hindi'],
+  contactEmail: 'srikanthnani1202@gmail.com',
+  skills: {
+    programmingLanguages: ['JavaScript', 'TypeScript', 'Java', 'Python', 'Go', 'PHP'],
+    webFrontEnd: ['HTML', 'CSS', 'Bootstrap', 'jQuery', 'ReactJS', 'Next.js'],
+    mobile: ['React Native', 'Android Development', 'XCode'],
+    databases: ['MySQL', 'MongoDB'],
+    additionalSkills: [
+      'Firebase', 'AWS Amplify', 'Storybook', 'Redux', 'Detox', 'React Query', 'Jest', 'datadoghq',
+      'Reanimated', 'Git', 'Styled Components', 'Codepush', 'A uth0', 'Sendbird', 'Figma',
+    ],
+  },
+  operatingSystems: ['Mac', 'Linux', 'Windows'],
 };
 
-let tools = ["Adobe Photoshop", "Adobe Illustrator", "Figma"];
-let os = ["Mac", "Linux", "Windows"];
+const renderItem = (title, content) => (
+  <View style={styles.section}>
+    <Text style={styles.sectionHeader}>{title}:</Text>
+    {Array.isArray(content) ? (
+      content.map((item) => (
+        <View key={item} style={styles.skillContainer}>
+          <Text style={styles.skillText}>{item}</Text>
+        </View>
+      ))
+    ) : (
+      <Text style={[styles.skillText, { color: '#111' }]}>{content}</Text>
+    )}
+  </View>
+);
 
-let me = {
-  name: "Srikanth Nani",
-  role: "Software Developer",
-  location: "Hyderabad, Telangana",
-  languagesSpoken: ["Telugu", "English", "Hindi"],
-  skills: skills,
-  tools: tools,
-  os: os
-};
+const App = () => (
+  <ScrollView style={styles.container}>
+    <StatusBar barStyle="dark-content" />
+    <Image source={{ uri: person.avatar }} style={styles.avatar} />
+    <Text style={styles.header}>👋 Hi there, I'm {person.name}!</Text>
+    <Text style={styles.caption}>{person.role}!</Text>
+    {renderItem('Programming Languages🚀', person.skills.programmingLanguages)}
+    {renderItem('Mobile Development📱', person.skills.mobile)}
+    {renderItem('Web Frontend🌐', person.skills.webFrontEnd)}
+    {renderItem('Databases🛢️', person.skills.databases)}
+    {renderItem('Additional Skills🛠️', person.skills.additionalSkills)}
+    {renderItem('Operating Systems💻', person.operatingSystems)}
+    {renderItem('Languages Spoken🗣️', person.languagesSpoken)}
+    {renderItem('Location🌍', person.location)}
+    {renderItem('Email✉️', person.contactEmail)}
+  </ScrollView>
+);
 
-console.log(`
-👨‍💻 Hello there, I'm ${me.name}!
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    padding: 16,
+    paddingVertical: 62,
+  },
+  header: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginBottom: 8,
+  },
+  avatar: {
+    width: 100,
+    height: 100,
+    borderRadius: 50,
+    marginBottom: 8,
+  },
+  section: {
+    marginBottom: 8,
+  },
+  sectionHeader: {
+    fontSize: 14,
+    fontWeight: 'bold',
+    marginBottom: 8,
+  },
+  skillContainer: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+  },
+  skillItem: {
+    marginRight: 8,
+    marginBottom: 8,
+    backgroundColor: '#111',
+    borderRadius: 8,
+    paddingVertical: 4,
+    paddingHorizontal: 8,
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  skillText: {
+    color: 'white',
+    fontSize: 14,
+  },
+  caption: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    marginBottom: 16,
+  },
+});
 
-📍 I'm a ${me.role} based in ${me.location}. I speak ${me.languagesSpoken.join(", ")} fluently.
-
-👨‍💻 I've mastered programming languages like ${me.skills.programmingLanguages.join(", ")}, and I shape the web with technologies like ${me.skills.webFrontEnd.join(", ")}.
-
-📱 For mobile application development, I prefer using ${me.skills.mobile.join(", ")}.
-
-🗄️ In the world of databases, I've dipped my fingers in ${me.skills.databases.join(", ")}.
-
-💼 Additionally, I have experience with ${me.skills.additionalSkills.join(", ")}.
-
-🔧 I also use tools such as ${me.tools.join(", ")} and am comfortable with operating systems like ${me.os.join(", ")}.
-
-💌 To learn more about me, you can shoot me an email to srikanthnani1202@gmail.com 
-`);
+export default App;
+```
