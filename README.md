@@ -1,1 +1,2 @@
-[srikanthnani.vercel.app](https://srikanthnani.vercel.app)
+[srikanthnani.com](https://srikanthnani.com)
+[iamsrikanthnani.com](https://iamsrikanthnani.com)
